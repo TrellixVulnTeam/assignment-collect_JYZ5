@@ -32,11 +32,11 @@ from .distribute import distribute
 def cli(ctx):
     """
     NUVOLOS COLLECT TOOL
-    
+
     The Nuvolos collect tool provides a convenient way to collect and hand out assignments submitted by your students.
-    
+
     The following commands can be provided:
-    
+
     collect: collects a specified assignment
     handout: hands out a specified assignment
     """
@@ -51,55 +51,52 @@ def cli(ctx):
     "--assignment_name",
     type=str,
     required=True,
-    help="Sets the assignment name, which is provided by you on the Nuvolos UI when creating the assignment distribution."
+    help="Sets the assignment name, which is provided by you on the Nuvolos UI when creating the assignment distribution.",
 )
 @click.option(
     "--assignment_folder",
     type=str,
     required=True,
-    help="Sets the assignment folder, which is provided by you on the Nuvolos UI when creating the assignment distribution."
-    
+    help="Sets the assignment folder, which is provided by you on the Nuvolos UI when creating the assignment distribution.",
 )
 @click.option(
     "--target_folder",
     type=str,
     required=True,
-    help="Sets the target folder to which collected assignments are copied for evaluation."
-    
+    help="Sets the target folder to which collected assignments are copied for evaluation.",
 )
 @click.pass_context
 def collect_assignment(ctx, **kwargs):
     """
     collect command
-    
+
     Collect a specified assignment. This triggers a script that iterates over the assignment folders under assignment_review/handing/...
     and for each user recovers the latest assignment that was handed in.
-    
+
     Collected assignments are placed at a target location in assignment_name/userid/.. layout.
-    """    
-    
+    """
+
     ret = collect(**kwargs)
     return ret
 
-    
+
 @cli.command("distribute")
 @click.option(
     "--source_folder",
     type=str,
     required=True,
-    help="Sets the assignment folder, which is provided by you on the Nuvolos UI when creating the assignment distribution."
-    
+    help="Sets the assignment folder, which is provided by you on the Nuvolos UI when creating the assignment distribution.",
 )
 @click.pass_context
 def distribute_assignment(ctx, **kwargs):
     """
     distribute command
-    
+
     Distribute a specified assignment. This triggers a script that takes a collected and graded set of assignments and
     places them iteratively into their respective assignment_review/handback/... folders.
-    
+
     The source directory should be the value that nvcollect collect was called with as a target.
-    """  
+    """
     ret = distribute(**kwargs)
     return ret
 
