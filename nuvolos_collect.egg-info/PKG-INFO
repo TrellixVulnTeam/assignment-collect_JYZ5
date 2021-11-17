@@ -1,0 +1,20 @@
+Metadata-Version: 1.2
+Name: nuvolos-collect
+Version: 0.1.0
+Summary: This is the Nuvolos Collector project.
+Home-page: https://github.com/matek-alphacruncher/nuvolos_collect
+Author: Mate Kovacs
+Author-email: mate.kovacs@alphacruncher.com
+License: UNKNOWN
+Download-URL: https://github.com/matek-alphacruncher/nuvolos_collect/archive/0.1.0.tar.gz
+Description: nuvolos_collect
+        
+        This is the Nuvolos Collector project.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries
+Classifier: License :: OSI Approved :: <Your Preferred License>
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=0.1.0

@@ -1,0 +1,4 @@
+
+    [console_scripts]
+    nvcollect=nuvolos_collect.cli:cli
+    
